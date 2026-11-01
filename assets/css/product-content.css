@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+:root { --pc-ink:#203329; --pc-muted:#64746a; --pc-green:#28704f; --pc-deep:#174a35; --pc-mint:#e7f1e8; --pc-line:#e1e8df; }
+body { color:var(--pc-ink); background:#f7f8f2; font-family:'DM Sans',sans-serif; }
+.container { width:min(980px,calc(100% - 36px)); margin:0 auto; padding:136px 0 78px; }
+.container > .text, .container > .title { margin:0 auto 30px; color:var(--pc-ink); text-align:center; font:800 clamp(2.1rem,5vw,3.7rem)/1.1 'Manrope',sans-serif; letter-spacing:-.055em; }
+.container > .text::after, .container > .title::after { content:''; display:block; width:56px; height:5px; margin:17px auto 0; border-radius:6px; background:#a4c49d; }
+.container > .gambar, .container > .jam-img { display:block; width:100%; max-height:480px; margin:0 auto 30px; object-fit:cover; border:7px solid #fff; border-radius:24px; box-shadow:0 20px 55px rgba(32,51,41,.1); }
+.product-content { display:grid; gap:18px; }
+.pc-intro { padding:clamp(22px,4vw,40px); border:1px solid var(--pc-line); border-radius:22px; background:white; box-shadow:0 12px 36px rgba(32,51,41,.05); }
+.pc-eyebrow { display:block; margin-bottom:9px; color:var(--pc-green); font-size:.74rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+.product-content h2 { margin:0 0 12px; color:var(--pc-deep); font:800 clamp(1.2rem,2.5vw,1.55rem)/1.3 'Manrope',sans-serif; letter-spacing:-.035em; }
+.product-content p { margin:0; color:var(--pc-muted); font-size:1rem; line-height:1.8; }
+.pc-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.pc-card { padding:22px; border:1px solid var(--pc-line); border-radius:18px; background:#fff; }
+.pc-card h2 { margin-bottom:14px; font-size:1.12rem; }
+.pc-list { display:grid; gap:10px; padding:0; margin:0; list-style:none; }
+.pc-list li { position:relative; padding-left:24px; color:#526157; font-size:.95rem; line-height:1.6; }
+.pc-list li::before { content:'✓'; position:absolute; left:0; color:var(--pc-green); font-weight:800; }
+.pc-list.numbered { counter-reset:pcstep; }
+.pc-list.numbered li { padding-left:42px; counter-increment:pcstep; }
+.pc-list.numbered li::before { content:counter(pcstep); display:grid; width:28px; height:28px; place-items:center; top:-2px; border-radius:50%; background:var(--pc-mint); color:var(--pc-green); font-size:.78rem; }
+.pc-card > p + p { margin-top:10px; }
+.pc-price { display:grid; grid-template-columns:.8fr 1.2fr; gap:22px; align-items:center; padding:24px; border-radius:18px; background:#edf5eb; }
+.pc-price dl { margin:0; padding:12px 17px; border:1px solid #dfeadd; border-radius:14px; background:white; }
+.pc-price dl div { display:flex; justify-content:space-between; gap:14px; padding:10px 0; border-bottom:1px solid #edf1eb; }
+.pc-price dl div:last-child { border:0; }
+.pc-price dt { color:var(--pc-muted); font-size:.9rem; }
+.pc-price dd { margin:0; color:var(--pc-deep); font-size:.9rem; font-weight:800; text-align:right; }
+.pc-takeaway { display:flex; align-items:flex-start; gap:13px; padding:18px 20px; border:1px solid #dce9d7; border-radius:16px; background:#f8fbf6; }
+.pc-takeaway i { margin-top:5px; color:var(--pc-green); }
+.pc-takeaway p { font-size:.95rem; }
+.pc-reasons { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.pc-reason { padding:20px; border:1px solid var(--pc-line); border-radius:17px; background:white; }
+.pc-reason span { display:grid; width:34px; height:34px; margin-bottom:12px; place-items:center; border-radius:10px; background:var(--pc-mint); color:var(--pc-green); font-size:.8rem; font-weight:800; }
+.pc-reason h2 { margin-bottom:7px; font-size:1rem; }
+.pc-back { margin-top:24px; }
+.container > .btn-back { display:inline-flex; padding:13px 19px; border-radius:12px; background:var(--pc-green); color:#fff; text-decoration:none; font-weight:700; }
+@media(max-width:620px) { .container { width:calc(100% - 28px); padding:108px 0 55px; } .container > .gambar,.container > .jam-img { max-height:330px; border-width:5px; border-radius:18px; } .pc-grid,.pc-reasons { grid-template-columns:1fr; } .pc-price { grid-template-columns:1fr; gap:15px; padding:19px; } .pc-price dl { padding:9px 12px; } .pc-price dt,.pc-price dd { font-size:.82rem; } }
